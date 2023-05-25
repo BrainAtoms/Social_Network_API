@@ -14,7 +14,7 @@ const userController = {
   },
 
   getUserById(req, res) {
-    User.findOneById({ _id: req.params.userId })
+    User.findOne({ _id: req.params.userId })
       .select("-__v")
       .populate("friends")
       .populate("thoughts")
